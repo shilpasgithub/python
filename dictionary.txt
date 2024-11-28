@@ -1,0 +1,68 @@
+def add_item(dictionary): 
+    key = input("Enter key: ")
+    value = input("Enter value: ")
+    dictionary[key] = value 
+    print("Item added successfully!")
+
+def update_item(dictionary):
+    key = input("Enter the key to update: ")
+    if key in dictionary:
+        value = input("Enter new value: ") 
+        dictionary[key] = value 
+        print("Item updated successfully!")
+    else:
+        print("Key not found!")
+
+def delete_item(dictionary):
+    key = input("Enter the key to delete: ") 
+    if key in dictionary:
+        del dictionary[key]
+        print("Item deleted successfully!") 
+    else:
+        print("Key not found!")
+
+def display_items(dictionary): 
+    if dictionary:
+        print("\nCurrent Dictionary:")
+        for key, value in dictionary.items(): 
+            print(f"{key}: {value}")
+    else:
+        print("Dictionary is empty!")
+
+def search_item(dictionary):
+    key = input("Enter the key to search: ")  
+    if key in dictionary:
+        print(f"{key}: {dictionary[key]}") 
+    else:
+        print("Key not found!")
+
+def main():
+    dictionary = {} 
+    while True:
+        print("\nMenu:") 
+        print("1. Add Item") 
+        print("2. Update Item") 
+        print("3. Delete Item")
+        print("4. Display All Items") 
+        print("5. Search for an Item")  
+        print("6. Exit")
+        choice = input("Enter your choice: ")
+        
+        if choice == '1':
+            add_item(dictionary)
+        elif choice == '2':
+            update_item(dictionary) 
+        elif choice == '3':
+            delete_item(dictionary) 
+        elif choice == '4':
+            display_items(dictionary) 
+        elif choice == '5':
+            search_item(dictionary) 
+        elif choice == '6':
+            print("Exiting program. Goodbye!") 
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,35 @@
+from pymongo import MongoClient
+
+# Step 1: Connect to the MongoDB server 
+try:
+    # Connect to the local MongoDB server
+    client = MongoClient("mongodb://localhost:27017/") 
+    print("Connected to MongoDB server successfully!") 
+except Exception as e:
+    print(f"Error connecting to MongoDB: {e}")
+
+# Step 2: Create or access a database
+# MongoDB creates a database only when data is inserted
+db_name = "MyDatabase"
+database = client[db_name]
+print(f"Database '{db_name}' connected or created successfully!")
+
+# Step 3: Insert a document into a collection to confirm creation 
+collection_name = "MyCollection"
+collection = database[collection_name]
+
+# Sample data
+sample_data = {"name": "abin", "age": 33, "city": "delhi"}
+insert_result = collection.insert_one(sample_data)
+
+print(f"Inserted document ID: {insert_result.inserted_id}")
+
+# Step 4: Display all documents in the collection 
+print("Documents in the collection:")
+ 
+for doc in collection.find():
+    print(doc)
+
+# Close the connection
+client.close()
+print("Connection closed.")

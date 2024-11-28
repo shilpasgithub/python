@@ -1,0 +1,81 @@
+def add_element(my_list):
+    element = int(input("Enter the element to add: "))
+    my_list.append(element)
+    print(f"Element '{element}' added to the list")
+
+def remove_element(my_list):
+    element = int(input("Enter the element to remove: "))
+    if element in my_list:
+        my_list.remove(element)
+        print(f"Element '{element}' removed from list")
+    else:
+        print(f"Element '{element}' not found in the list")
+
+def display_element(my_list):
+    print("Current List is:")
+    print(my_list)
+
+def search_element(my_list):
+    element = int(input("Enter the element to search: "))
+    if element in my_list:
+        print(f"Element '{element}' found in list")
+    else:
+        print(f"Element '{element}' not found in list")
+
+def sort_element(my_list):
+    if my_list:
+        my_list.sort()
+        print("List sorted")
+    else:
+        print("List is empty, cannot sort.")
+
+def max_element(my_list):
+    if my_list:
+        max_element = max(my_list)
+        print(f"Max element in list is '{max_element}'")
+    else:
+        print("List is empty, cannot find max element.")
+
+def min_element(my_list):
+    if my_list:
+        min_element = min(my_list)
+        print(f"Min element in list is '{min_element}'")
+    else:
+        print("List is empty, cannot find min element.")
+
+def main():
+    my_list = []
+    while True:
+        print("\nList Operations Menu:")
+        print("1. Add an element to the list")
+        print("2. Remove an element from the list")
+        print("3. Display List")
+        print("4. Search for an element")
+        print("5. Sort List")
+        print("6. Find the max element")
+        print("7. Find the min element")
+        print("8. Exit")
+        choice = int(input("Enter your choice (1/2/3/4/5/6/7/8): "))
+        
+        if choice == 1:
+            add_element(my_list)
+        elif choice == 2:
+            remove_element(my_list)
+        elif choice == 3:
+            display_element(my_list)
+        elif choice == 4:
+            search_element(my_list)
+        elif choice == 5:
+            sort_element(my_list)
+        elif choice == 6:
+            max_element(my_list)
+        elif choice == 7:
+            min_element(my_list)
+        elif choice == 8:
+            print("Exiting")
+            break
+        else:
+            print("Enter a valid choice between 1-8")
+
+# Call the main function to run the program
+main()

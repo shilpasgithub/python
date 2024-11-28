@@ -1,0 +1,26 @@
+class StringReverser:
+    def reverse_words(self, input_string):
+        # Split the string into words
+        words = input_string.split()
+        
+        # Reverse the list of words
+        reversed_words = words[::-1]
+        
+        # Join the reversed words back into a string
+        reversed_string = " ".join(reversed_words)
+        
+        return reversed_string
+
+if __name__ == "__main__":
+    # Example input string
+    input_string = "hello world"
+    
+    # Create an instance of StringReverser
+    reverser = StringReverser()
+    
+    # Get the reversed string
+    reversed_result = reverser.reverse_words(input_string)
+    
+    # Print the original and reversed strings
+    print("Original String:", input_string)
+    print("Reversed String:", reversed_result)

@@ -1,0 +1,20 @@
+import math
+def check_odd_even(number):
+     if number % 2 == 0:
+          return f"{number} is Even." 
+     else:
+         return f"{number} is Odd."
+def area_circle(radius):
+      return f"Area of circle: {math.pi * radius**2:.2f}"
+def area_rectangle(length, width):
+     return f"Area of rectangle: {length * width}"
+name = input("Enter your name: ") 
+print(f"Hello, {name}!")
+number = int(input("Enter a number: "))
+ print(check_odd_even(number))
+radius = float(input("Enter the radius of the circle: ")) 
+print(area_circle(radius))
+length = float(input("Enter the length of the rectangle: ")) 
+width = float(input("Enter the width of the rectangle: ")) 
+print(area_rectangle(length, width))
+

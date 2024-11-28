@@ -1,0 +1,15 @@
+def function_recursive(n):
+    if n==0 or n==1:
+          return 1
+    else:
+          return n*(function_recursive(n-1))
+num = int(input(“Enter a non negative integer:”))
+if num<0:
+     print(“factorial is not defined”)
+elif num==0:
+     print(“factorial of 0 is 1”)
+else:
+      result = function_recursive(num)
+      print(f”The factorial of {num} is {result}”)
+
+

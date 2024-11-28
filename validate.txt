@@ -1,0 +1,26 @@
+import re
+
+def validate_email(email):
+    """Validates an email address."""
+    email_regex = r'^[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return re.match(email_regex, email) is not None
+
+def validate_phone(phone):
+    """Validates a phone number."""
+    phone_regex = r'^\+?[1-9]\d{1,14}$'  # E.164 standard
+    return re.match(phone_regex, phone) is not None
+
+def validate_password(password):
+    """Validates a password."""
+    password_regex = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
+    return re.match(password_regex, password) is not None
+
+if __name__ == "__main__":
+    email = input("Enter your email: ")
+    print(f"Email '{email}' is valid: {validate_email(email)}")
+
+    phone = input("Enter your phone number (e.g., +1234567890): ")
+    print(f"Phone '{phone}' is valid: {validate_phone(phone)}")
+
+    password = input("Enter your password: ")
+    print(f"Password '{password}' is valid: {validate_password(password)}")

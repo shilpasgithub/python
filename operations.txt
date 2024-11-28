@@ -1,0 +1,57 @@
+def integer():
+    int_a = int(input("Enter the value of a: "))
+    int_b = int(input("Enter the value of b: "))
+    print(f"Addition: {int_a} + {int_b} = {int_a + int_b}")
+    print(f"Subtraction: {int_a} - {int_b} = {int_a - int_b}")
+    print(f"Multiplication: {int_a} * {int_b} = {int_a * int_b}")
+    print(f"Division: {int_a} / {int_b} = {int_a / int_b}")
+    print(f"Floor Division: {int_a} // {int_b} = {int_a // int_b}")
+    print(f"Modulus: {int_a} % {int_b} = {int_a % int_b}")
+
+def floating():
+    float_a = float(input("Enter the value of a: "))
+    float_b = float(input("Enter the value of b: "))
+    print(f"Addition: {float_a} + {float_b} = {float_a + float_b}")
+    print(f"Subtraction: {float_a} - {float_b} = {float_a - float_b}")
+    print(f"Multiplication: {float_a} * {float_b} = {float_a * float_b}")
+    print(f"Division: {float_a} / {float_b} = {float_a / float_b}")
+    print(f"Floor Division: {float_a} // {float_b} = {float_a // float_b}")
+    print(f"Modulus: {float_a} % {float_b} = {float_a % float_b}")
+
+def complexno():
+    real_a = float(input("Enter the real part of first complex no: "))
+    imag_a = float(input("Enter the imaginary part of first complex no: "))
+    real_b = float(input("Enter the real part of second complex no: "))
+    imag_b = float(input("Enter the imaginary part of second complex no: "))
+    complex_a = complex(real_a, imag_a)
+    complex_b = complex(real_b, imag_b)
+    print(f"Addition : {complex_a} + {complex_b} = {complex_a + complex_b}")
+    print(f"Subtraction : {complex_a} - {complex_b} = {complex_a - complex_b}")
+    print(f"Multiplication : {complex_a} * {complex_b} = {complex_a * complex_b}")
+    print(f"Division : {complex_a} / {complex_b} = {complex_a / complex_b}")
+
+def menu():
+    print("\nNumeric Datatype and arithmetic operations")
+    print("1. Integer Operation")
+    print("2. Floating Operation")
+    print("3. Complex Operation")
+    print("4. Exit")
+
+def main():
+    while True:
+        menu()
+        choice = int(input("Enter a choice: "))
+        if choice == 1:
+            integer()
+        elif choice == 2:
+            floating()
+        elif choice == 3:
+            complexno()
+        elif choice == 4:
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice! Please enter a valid option (1-4).")
+
+# Call the main function to start the program
+main()

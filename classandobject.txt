@@ -1,0 +1,23 @@
+class Car:
+    def __init__ (self, model, year): 
+         self.model = model 
+         self.year = year
+
+    def display_info(self):
+         print(f"Car Model: {self.model}") 
+         print(f"Year of Manufacture: {self.year}")
+
+    def start(self):
+         print(f"The {self.model} is now started.")
+
+    def stop(self):
+       print(f"The {self.model} has stopped.")
+
+model = input("Enter car model: ")
+year = input("Enter year of manufacture: ")
+
+
+car = Car(model, year)
+car.display_info()
+car.start()
+car.stop()
